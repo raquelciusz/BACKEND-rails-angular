@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+FreelanceDocument.delete_all
+
+100.times do |d|
+  FreelanceDocument.create!(
+    title: "Document #{d}",
+    description: Faker::Lorem.sentence,
+    file_url: Faker::Internet.url,
+    image_url: 'https://picsum.photos/300/200'
+  )
+end
